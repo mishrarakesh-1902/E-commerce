@@ -14,11 +14,6 @@ from cart.cart import Cart
 
 from app.forms import FeedbackForm  # Correct if forms.py is in the same app
 
-
-# naya code h 
-# import json
-# import hashlib
-# import requests
 # import paytmchecksum
 # from django.shortcuts import render, redirect
 # from django.http import JsonResponse
