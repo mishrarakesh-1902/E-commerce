@@ -1,0 +1,765 @@
+{% extends 'master.html' %}
+
+{% block body %} 
+<section id="slider"><!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+                    
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1><span>Ajara</span>-SHOPPER</h1>
+                                <h2>Free E-Commerce Template</h2>
+                                <p>aaye aaye saman le jaye .sbse sasta sbse aacha . </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/static/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+                                <img src="/static/images/home/pricing.png"  class="pricing" alt="" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Ajara</span>-SHOPPER</h1>
+                                <h2>100% Responsive Design</h2>
+                                <p>Buy 1 get 1 free. 10 ka doo - 10 ka doo(matlab 1 ke sath 1 free). </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/static/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+                                <img src="/static/images/home/pricing.png"  class="pricing" alt="" />
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1><span>Ajara</span>-SHOPPER</h1>
+                                <h2>Free Ecommerce Template</h2>
+                                <p>Saman bhari chhut pe . Duniya ka sbse bada offer. AAYE AUR LEJAYE   </p>
+                                <button type="button" class="btn btn-default get">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="/static/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+                                <img src="/static/images/home/pricing.png" class="pricing" alt="" />
+                            </div>
+                        </div>
+                        
+                    </div>
+              
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        {% for cat in category %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#{{cat.id}}">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        {{cat.name}}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="{{cat.id}}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        {% for i in cat.sub_category_set.all %}
+                                        <li><a href="/?sub_category={{i.id}}">{{i.name}} </a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}                        
+                    </div><!--/category-products-->
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                {% for i in brand %}
+                                <li><a href="/?brand={{i.id}}"> <span class="pull-right">(50)</span>{{ i.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+                    <div class="price-range"><!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="well text-center">
+                             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+                             <b class="pull-left">₹ 0</b> <b class="pull-right">₹ 600</b>
+                             
+                        </div>
+                    </div><!--/price-range--> 
+                         
+
+
+                    <section class="flash-sale">
+                        <h2>⏳ Limited Time Offer! Sale Ends In:</h2>
+                        <div id="countdown"></div>
+                    </section>
+                    
+                    <style>
+                      .flash-sale {
+                          text-align: center;
+                          padding: 20px;
+                          background-color: #ff5733;
+                          color: white;
+                          font-size: 20px;
+                          font-weight: bold;
+                      }
+                    
+                      #countdown {
+                          font-size: 24px;
+                          margin-top: 10px;
+                      }
+                    </style>
+                    
+                    <script>
+                      function startCountdown(durationInMinutes) {
+                          let countdownElement = document.getElementById("countdown");
+                          let timeLeft = durationInMinutes * 60;
+                    
+                          function updateTimer() {
+                              let minutes = Math.floor(timeLeft / 60);
+                              let seconds = timeLeft % 60;
+                              countdownElement.innerHTML = minutes + "m " + seconds + "s";
+                              if (timeLeft > 0) {
+                                  timeLeft--;
+                                  setTimeout(updateTimer, 1000);
+                              } else {
+                                  countdownElement.innerHTML = "⏰ Time's Up!";
+                              }
+                          }
+                          updateTimer();
+                      }
+                    
+                      startCountdown(30);  // Set countdown for 30 minutes
+                    </script>
+                    <br><br><br><br><br>
+
+                 <!-- Swiper Carousel Container -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="slide-content">
+                <img src="/static/images/home/poster.webp" alt="Big Sale - Up to 50% OFF">
+                <div class="overlay">
+                    <h2>🔥 Big Sale - Up to 50% OFF!</h2>
+                    <a href="#" class="cta-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-content">
+                <img src="/static/images/home/poster2.webp" alt="New Arrivals - Special Discounts">
+                <div class="overlay">
+                    <h2>🛍️ New Arrivals - Special Discounts!</h2>
+                    <a href="#" class="cta-btn">Explore</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-content">
+                <img src="/static/images/home/poster3.webp" alt="Limited Time Offer - Buy 1 Get 1 Free">
+                <div class="overlay">
+                    <h2>⏳ Limited Time Offer - Buy 1 Get 1 Free</h2>
+                    <a href="#" class="cta-btn">Grab Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide-content">
+                <img src="/static/images/home/shipping.jpg" alt="Free Shipping on Orders Above ₹999">
+                <div class="overlay">
+                    <h2>🚚 Free Shipping on Orders Above ₹999</h2>
+                    <a href="#" class="cta-btn">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper.js CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper Styling -->
+<style>
+  /* General Styles */
+  .swiper {
+      width: 100%;
+      height: 350px;
+      margin-top: 20px;
+  }
+
+  .swiper-slide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 10px;
+  }
+
+  .slide-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  /* Hover Effect */
+  .swiper-slide:hover img {
+      transform: scale(1.05);
+  }
+
+  /* Overlay Content */
+  .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      width: 80%;
+  }
+
+  .overlay h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .cta-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: #ff7e5f;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s ease-in-out;
+  }
+
+  .cta-btn:hover {
+      background-color: #ff5733;
+      transform: scale(1.05);
+  }
+
+  /* Swiper Navigation Styling */
+  .swiper-button-next, .swiper-button-prev {
+      color: #fff;
+  }
+
+  .swiper-pagination-bullet-active {
+      background: #ff7e5f;
+  }
+</style>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    effect: "fade", /* Smooth fade effect */
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+
+
+                    
+                
+                              
+                </div>
+            </div>            
+            <div class="col-sm-9 padding-right">
+                <div class="features_items"><!--features_items-->
+                    <h2 class="title text-center">Features Items</h2>
+                    {% for prod in product %}
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src =" {{ prod.image.url }}" alt="" height="300px"; />
+                                        <h2>₹{{prod.price}}</h2>
+                                        <p>{{prod.name}}</p>
+                                        <a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                           
+                                            <h2>₹{{prod.price}}</h2>
+                                            <p>{{prod.name}}</p>
+                                            <a href="{% url 'cart_add' prod.id %}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> <br>
+                                            <a href="{% url 'feedback' %}" class="feedback-btn">📝 Give Feedback</a>
+
+<style>
+  .feedback-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff9350; /* Solid Background Color */
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .feedback-btn:hover {
+    background-color: #ff9350; /* Slightly Darker Shade on Hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+                                        </div>
+                                    </div>
+                            </div>
+                            <!-- <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href="{{prod.id}}"><i class="fa fa-plus-square"></i>View Product</a></li>
+                                    
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><!--features_items-->
+                
+                <div class="category-tab"><!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
+                            <li><a href="#blazers" data-toggle="tab">Blazers</a></li>
+                            <li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
+                            <li><a href="#kids" data-toggle="tab">Kids</a></li>
+                            <li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tshirt" >
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery1.jpg" alt="" />
+                                            <h2>₹799</h2>
+                                            <p>GIRL TOP</p>
+                                            <!-- <a href="{% url 'cart_add' }" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery2.jpg" alt="" />
+                                            <h2>₹899</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery3.jpg" alt="" />
+                                            <h2>₹1299</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery4.jpg" alt="" />
+                                            <h2>₹699</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="blazers" >
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery4.jpg" alt="" />
+                                            <h2>₹899</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery3.jpg" alt="" />
+                                            <h2>₹399</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery2.jpg" alt="" />
+                                            <h2>₹599</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery1.jpg" alt="" />
+                                            <h2>₹1399</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="sunglass" >
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery3.jpg" alt="" />
+                                            <h2>₹999</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery4.jpg" alt="" />
+                                            <h2>399</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery1.jpg" alt="" />
+                                            <h2>₹299</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery2.jpg" alt="" />
+                                            <h2>₹569</h2>
+                                            <p>Easy rakesh Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="kids" >
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery1.jpg" alt="" />
+                                            <h2>₹369</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery2.jpg" alt="" />
+                                            <h2>₹999</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery3.jpg" alt="" />
+                                            <h2>₹1236</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery4.jpg" alt="" />
+                                            <h2>₹789</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="poloshirt" >
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery2.jpg" alt="" />
+                                            <h2>₹369</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery4.jpg" alt="" />
+                                            <h2>₹1399</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery3.jpg" alt="" />
+                                            <h2>₹796</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="/static/images/home/gallery1.jpg" alt="" />
+                                            <h2>₹1299</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/category-tab-->
+                
+                
+                <div class="recommended_items"><!--recommended_items-->
+                    <h2 class="title text-center">recommended items</h2>
+                    
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">	
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="/static/images/home/recommend1.jpg" alt="" />
+                                                <h2>₹896</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="/static/images/home/recommend2.jpg" alt="" />
+                                                <h2>₹1399</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="/static/images/home/recommend3.jpg" alt="" />
+                                                <h2>₹789</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">	
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="/static/images/home/recommend1.jpg" alt="" />
+                                                <h2>₹1256</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                            </div>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="/static/images/home/recommend2.jpg" alt="" />
+                                                <h2>₹239</h2>
+                                                <p>Easy Polo Black Edition</p>
+                                                <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="/static/images/home/recommend3.jpg" alt="" />
+                                                <h2>₹789</h2>
+                                                <p>Easy Polo Black Edition</p>
+
+                                                <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                          </a>
+                          <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                          </a>			
+                    </div>
+                </div>                            
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}    
