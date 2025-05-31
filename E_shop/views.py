@@ -232,10 +232,17 @@ def Product_Detail(request , id):
     return render(request, 'product_detail.html', context)
 
 def Search(request):
-    query = request.GET['query']
-    product = Product.objects.filter(name__icontains = query) #this use for setup search bar
+    category = Category.objects.all()
+    brand = Brand.objects.all()
+    query = request.GET.get('query')
+    if query:
+        product = Product.objects.filter(name__icontains = query)
+    else:
+        product = Product.objects.none()
 
     context = {
+        'category': category,
+        'brand': brand,
         "product": product,
     }
 
