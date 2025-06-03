@@ -15,9 +15,6 @@ from cart.cart import Cart
 from app.forms import FeedbackForm  # Correct if forms.py is in the same app
 
 
-# from django.http import JsonResponse
-# from django.conf import settings
-# from django.views.decorators.csrf import csrf_exempt
 
 import json
 import requests
