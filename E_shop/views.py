@@ -24,11 +24,6 @@ from django.views.decorators.csrf import csrf_exempt
 from paytmchecksum import generateSignature, verifySignature
 
 
-
-
-
-
-
 def Master(request):
     return render(request, 'master.html')
 
