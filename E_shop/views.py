@@ -30,7 +30,7 @@ def Master(request):
 def Index(request):
     category = Category.objects.all()
     brand = Brand.objects.all()
-    # product_detailID = request.GET.get('product_detail')
+    
     brandID = request.GET.get('brand')
     categoryID = request.GET.get('sub_category')
 
