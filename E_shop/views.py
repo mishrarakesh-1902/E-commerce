@@ -41,8 +41,6 @@ def Index(request):
     else:
         product = Product.objects.all()
 
-
-
     context = {
         'category':category,
         'product' :product,
