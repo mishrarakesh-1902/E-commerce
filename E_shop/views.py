@@ -45,9 +45,6 @@ def Index(request):
         'category':category,
         'product' :product,
         'brand':brand, 
-        
-        
-
 }
 
          
