@@ -46,10 +46,6 @@ def Index(request):
         'product' :product,
         'brand':brand, 
 }
-
-         
-    
-
     return render(request, 'index.html' , context)
 
 
