@@ -47,8 +47,6 @@ def Index(request):
         'brand':brand, 
 }
     return render(request, 'index.html' , context)
-
-
 def signup(request):
     if request.method == 'POST':
         form = UserCreateForm(request.POST)
