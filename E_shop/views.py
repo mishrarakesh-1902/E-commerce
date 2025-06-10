@@ -109,12 +109,9 @@ def cart_clear(request):
     cart.clear()
     return redirect("cart_detail")
 
-
 @login_required(login_url='/accounts/login/')
 def cart_detail(request):
     return render(request, 'cart/cart_detail.html')
-
-
 
 def Contact_Page(request):
     if request.method == "POST":
