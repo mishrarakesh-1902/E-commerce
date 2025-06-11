@@ -135,9 +135,6 @@ def CheakOut(request):
         print(cart)
 
 
-
-        # print(address , phone , pincode,cart,user)
-
         for i in cart:
             a= int(cart[i]['price'])
             b= cart[i]['quantity']
