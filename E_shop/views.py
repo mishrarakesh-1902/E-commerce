@@ -227,7 +227,6 @@ def Privecy(request):
 
 
 
-# yaha v code h naya wala=====
 
 # def generate_paytm_checksum(order_id, amount):
 #     """Generate checksum for Paytm transaction."""
