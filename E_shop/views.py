@@ -228,8 +228,7 @@ def Privecy(request):
 
 
 
-# def generate_paytm_checksum(order_id, amount):
-#     """Generate checksum for Paytm transaction."""
+
 #     paytm_params = {
 #         "MID": settings.PAYTM_MERCHANT_ID,
 #         "ORDER_ID": str(order_id),
