@@ -225,21 +225,6 @@ def Privecy(request):
     }
     return render(request, 'privecy.html',context)
 
-
-
-
-
-#     paytm_params = {
-#         "MID": settings.PAYTM_MERCHANT_ID,
-#         "ORDER_ID": str(order_id),
-#         "CUST_ID": "customer_123",
-#         "TXN_AMOUNT": str(amount),
-#         "CHANNEL_ID": settings.PAYTM_CHANNEL_ID,
-#         "WEBSITE": settings.PAYTM_WEBSITE,
-#         "CALLBACK_URL": settings.PAYTM_CALLBACK_URL,
-#         "INDUSTRY_TYPE_ID": settings.PAYTM_INDUSTRY_TYPE_ID,
-#     }
-
 #     checksum = paytmchecksum.generateSignature(json.dumps(paytm_params), settings.PAYTM_MERCHANT_KEY)
 #     paytm_params["CHECKSUMHASH"] = checksum
 #     return paytm_params
