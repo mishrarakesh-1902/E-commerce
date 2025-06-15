@@ -225,15 +225,6 @@ def Privecy(request):
     }
     return render(request, 'privecy.html',context)
 
-#     checksum = paytmchecksum.generateSignature(json.dumps(paytm_params), settings.PAYTM_MERCHANT_KEY)
-#     paytm_params["CHECKSUMHASH"] = checksum
-#     return paytm_params
-
-# def checkout(request):
-#     """Process checkout and redirect to Paytm payment."""
-#     if request.method == "POST":
-#         amount = request.POST.get("total_amount")
-#         order_id = "ORD" + str(hash(amount))  # Generate unique order ID
 
 #         paytm_params = generate_paytm_checksum(order_id, amount)
 
