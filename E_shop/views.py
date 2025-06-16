@@ -226,12 +226,6 @@ def Privecy(request):
     return render(request, 'privecy.html',context)
 
 
-#         paytm_params = generate_paytm_checksum(order_id, amount)
-
-#         return render(request, "paytm_redirect.html", {"paytm_params": paytm_params})
-
-#     return render(request, "checkout.html")
-
 
 # def paytm_response(request):
 #     """Handle Paytm response after payment."""
