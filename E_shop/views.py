@@ -227,20 +227,6 @@ def Privecy(request):
 
 
 
-# def paytm_response(request):
-#     """Handle Paytm response after payment."""
-#     paytm_response = request.POST.dict()
-#     paytm_checksum = paytm_response.pop("CHECKSUMHASH", None)
-
-#     # Verify checksum
-#     is_valid = paytmchecksum.verifySignature(paytm_response, settings.PAYTM_MERCHANT_KEY, paytm_checksum)
-
-#     if is_valid and paytm_response["RESPCODE"] == "01":
-#         return JsonResponse({"message": "Payment successful", "status": "success"})
-#     else:
-#         return JsonResponse({"message": "Payment failed", "status": "failure"})
-
-
 def initiate_paytm_payment(request):
     if request.method == "POST":
         amount = request.session.get("cart_total_amount", 0)  # Fetch total amount from session
