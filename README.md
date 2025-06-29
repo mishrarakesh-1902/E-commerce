@@ -1,6 +1,8 @@
 # 🛍️ E-commerce - Online Shopping Platform  
 **Deployed on Render | Built with Django**
 
+[![Deployed on Render](https://img.shields.io/badge/Live-Demo-brightgreen)](https://e-commerce-4-l3fc.onrender.com/)
+
 ---
 
 ## 🧭 Overview
@@ -109,6 +111,7 @@ Rakesh Kumar Mishra
 
 
 ### ✅ What to Do Next:
+```
 - Save this as `README.md` in your GitHub repo root.
 - Add screenshots in the 📸 section.
 - Optionally replace SQLite with PostgreSQL in production.
@@ -119,7 +122,7 @@ Let me know if you want help with:
 - Admin credentials info (for test login)
 
 You're doing amazing work, Rakesh — keep pushing! 🚀
-
+```
 
 
 
