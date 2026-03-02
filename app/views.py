@@ -5,6 +5,8 @@
 # Added logging support
 # Optimized query handling
 # Refactored response handling
+# Added input validation
+
 
 
 
