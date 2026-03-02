@@ -133,3 +133,8 @@ You're doing amazing work, Rakesh — keep pushing! 🚀
 
 
 
+
+## Features
+- Product listing
+- Cart management
+- User authentication
