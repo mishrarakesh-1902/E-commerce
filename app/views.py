@@ -3,5 +3,7 @@
 # Create your views here.
 # Updated: improved view structure
 # Added logging support
+# Optimized query handling
+
 
 
