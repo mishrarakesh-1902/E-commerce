@@ -2521,3 +2521,6 @@ h2.title {
 }
 
 
+
+/* Custom button styles */
+.btn-custom { border-radius: 4px; font-weight: 500; }
