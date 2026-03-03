@@ -138,3 +138,8 @@ You're doing amazing work, Rakesh — keep pushing! 🚀
 - Product listing
 - Cart management
 - User authentication
+
+## Installation
+1. Clone repo
+2. Install requirements
+3. Run migrations
