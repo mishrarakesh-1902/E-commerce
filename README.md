@@ -143,3 +143,6 @@ You're doing amazing work, Rakesh — keep pushing! 🚀
 1. Clone repo
 2. Install requirements
 3. Run migrations
+
+## Usage
+Run python manage.py runserver to start the dev server.
