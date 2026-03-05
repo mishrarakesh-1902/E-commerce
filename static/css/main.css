@@ -2547,3 +2547,6 @@ h2.title {
 
 /* Sale badge */
 .badge-sale { background-color: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
+
+/* Breadcrumb */
+.breadcrumb-custom { background: transparent; padding: 0; margin-bottom: 20px; }
