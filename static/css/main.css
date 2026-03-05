@@ -2544,3 +2544,6 @@ h2.title {
 
 /* Badge styles */
 .badge-new { background-color: #27ae60; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
+
+/* Sale badge */
+.badge-sale { background-color: #e74c3c; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
