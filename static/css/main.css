@@ -2564,3 +2564,6 @@ h2.title {
 
 /* Sidebar filter */
 .filter-sidebar { border: 1px solid #eee; border-radius: 6px; padding: 15px; }
+
+/* Back to top button */
+#back-to-top { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
