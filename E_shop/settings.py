@@ -186,3 +186,6 @@ PAYTM_CHANNEL_ID = 'WEB'
 PAYTM_INDUSTRY_TYPE_ID = 'Retail'
 PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
+
+# Security settings for production
+# SECURE_SSL_REDIRECT = True  # Uncomment in production
