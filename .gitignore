@@ -49,3 +49,7 @@ Thumbs.db
 
 # Byte-compiled files
 *.pyc
+
+# Coverage reports
+.coverage
+htmlcov/
