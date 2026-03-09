@@ -53,3 +53,8 @@ Thumbs.db
 # Coverage reports
 .coverage
 htmlcov/
+
+# Secrets
+.env.local
+.env.production
+secrets.json
