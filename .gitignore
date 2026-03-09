@@ -58,3 +58,7 @@ htmlcov/
 .env.local
 .env.production
 secrets.json
+
+# Node modules (if any frontend build)
+node_modules/
+npm-debug.log
