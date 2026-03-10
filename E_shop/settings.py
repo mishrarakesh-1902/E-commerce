@@ -192,3 +192,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # SESSION_COOKIE_SECURE = True  # Uncomment in production
 # CSRF_COOKIE_SECURE = True  # Uncomment in production
+
+# Logging configuration placeholder
+# See https://docs.djangoproject.com/en/4.2/topics/logging/
