@@ -189,3 +189,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # Security settings for production
 # SECURE_SSL_REDIRECT = True  # Uncomment in production
+
+# SESSION_COOKIE_SECURE = True  # Uncomment in production
+# CSRF_COOKIE_SECURE = True  # Uncomment in production
