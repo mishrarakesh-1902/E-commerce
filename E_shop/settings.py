@@ -204,3 +204,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # File upload settings
 # FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5MB
+
+# Pagination
+# DEFAULT_PAGE_SIZE = 12
