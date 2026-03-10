@@ -198,3 +198,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # Cache configuration placeholder
 # CACHES = {'default': {'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache'}}
+
+# Email configuration
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
