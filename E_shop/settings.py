@@ -195,3 +195,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # Logging configuration placeholder
 # See https://docs.djangoproject.com/en/4.2/topics/logging/
+
+# Cache configuration placeholder
+# CACHES = {'default': {'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache'}}
