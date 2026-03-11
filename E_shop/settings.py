@@ -210,3 +210,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # Django REST framework placeholder
 # REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']}
+
+# Internationalization
+# USE_L10N = True  # locale-aware formatting
