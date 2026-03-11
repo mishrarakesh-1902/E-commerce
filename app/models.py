@@ -140,3 +140,6 @@ class Feedback(models.Model):
 
 # TODO: Add product review model
 # TODO: Add wishlist model
+
+# TODO: Add shipping address model
+# TODO: Add coupon/discount model
