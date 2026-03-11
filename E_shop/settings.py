@@ -213,3 +213,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # Internationalization
 # USE_L10N = True  # locale-aware formatting
+
+# Performance: compress static files
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
