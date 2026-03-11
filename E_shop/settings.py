@@ -207,3 +207,6 @@ PAYTM_CALLBACK_URL = 'http://127.0.0.1:8000/paytm-response/'
 
 # Pagination
 # DEFAULT_PAGE_SIZE = 12
+
+# Django REST framework placeholder
+# REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated']}
