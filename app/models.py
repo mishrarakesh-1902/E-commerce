@@ -132,3 +132,8 @@ class Feedback(models.Model):
 
 
 
+
+# Model documentation
+# Product: stores product details including name, price, image, category
+# Order: tracks user orders
+# ContactUs: stores contact form submissions
