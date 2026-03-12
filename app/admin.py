@@ -18,3 +18,6 @@ admin.site.register(Feedback)
 # Admin customization notes
 # Use list_display to show more fields in admin list view
 # Use search_fields to enable search in admin
+
+# Use list_filter for sidebar filters
+# Use readonly_fields for non-editable fields
