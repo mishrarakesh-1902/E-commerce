@@ -15,3 +15,6 @@ admin.site.register(Brand)
 
 
 admin.site.register(Feedback)
+# Admin customization notes
+# Use list_display to show more fields in admin list view
+# Use search_fields to enable search in admin
