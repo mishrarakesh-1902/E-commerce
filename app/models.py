@@ -145,3 +145,5 @@ class Feedback(models.Model):
 # TODO: Add coupon/discount model
 
 # Performance tip: Add db_index=True to frequently queried fields
+
+# Signal handlers should be in a separate signals.py file
