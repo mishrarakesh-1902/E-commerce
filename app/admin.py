@@ -21,3 +21,6 @@ admin.site.register(Feedback)
 
 # Use list_filter for sidebar filters
 # Use readonly_fields for non-editable fields
+
+# Use inlines for related models
+# Example: class OrderItemInline(admin.TabularInline): ...
