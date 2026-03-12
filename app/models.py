@@ -143,3 +143,5 @@ class Feedback(models.Model):
 
 # TODO: Add shipping address model
 # TODO: Add coupon/discount model
+
+# Performance tip: Add db_index=True to frequently queried fields
