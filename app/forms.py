@@ -17,3 +17,6 @@ class FeedbackForm(forms.ModelForm):
 # Form validation tips
 # Use clean_<field> for field-level validation
 # Use clean() for cross-field validation
+
+# Use ModelForm for forms tied to models
+# Always set Meta class with model and fields
