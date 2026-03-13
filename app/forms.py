@@ -13,3 +13,7 @@ class FeedbackForm(forms.ModelForm):
             'comments': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Write your feedback...'}),
         }
 
+
+# Form validation tips
+# Use clean_<field> for field-level validation
+# Use clean() for cross-field validation
