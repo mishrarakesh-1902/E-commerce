@@ -24,3 +24,6 @@ admin.site.register(Feedback)
 
 # Use inlines for related models
 # Example: class OrderItemInline(admin.TabularInline): ...
+
+# Use actions for bulk operations
+# Example: def mark_as_shipped(modeladmin, request, queryset): ...
