@@ -27,3 +27,7 @@ admin.site.register(Feedback)
 
 # Use actions for bulk operations
 # Example: def mark_as_shipped(modeladmin, request, queryset): ...
+
+# Admin site customization
+# admin.site.site_header = 'E-Commerce Admin'
+# admin.site.site_title = 'E-Commerce'
