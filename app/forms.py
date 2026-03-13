@@ -20,3 +20,6 @@ class FeedbackForm(forms.ModelForm):
 
 # Use ModelForm for forms tied to models
 # Always set Meta class with model and fields
+
+# Widget customization
+# Use widgets={'field': forms.TextInput(attrs={'class': 'form-control'})}
