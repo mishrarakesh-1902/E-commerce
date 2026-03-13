@@ -23,3 +23,6 @@ class FeedbackForm(forms.ModelForm):
 
 # Widget customization
 # Use widgets={'field': forms.TextInput(attrs={'class': 'form-control'})}
+
+# Error messages
+# Use error_messages={'required': 'This field is required.'}
