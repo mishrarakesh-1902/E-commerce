@@ -26,3 +26,6 @@ class FeedbackForm(forms.ModelForm):
 
 # Error messages
 # Use error_messages={'required': 'This field is required.'}
+
+# Form placeholders
+# Add attrs={'placeholder': 'Enter value'} to widget attrs
