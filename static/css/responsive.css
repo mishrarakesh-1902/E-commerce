@@ -529,3 +529,5 @@ ul.sub-menu{
 @media (max-width: 576px) { .product-card { margin-bottom: 20px; } }
 
 @media (max-width: 768px) { .navbar-brand img { height: 40px; } }
+
+@media (max-width: 576px) { .cart-table { font-size: 13px; } }
