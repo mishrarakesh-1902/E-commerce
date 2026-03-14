@@ -525,3 +525,5 @@ ul.sub-menu{
 }
 
 }
+/* Mobile improvements */
+@media (max-width: 576px) { .product-card { margin-bottom: 20px; } }
