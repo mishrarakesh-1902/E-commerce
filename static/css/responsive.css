@@ -543,3 +543,5 @@ ul.sub-menu{
 @media (max-width: 768px) { .banner-text { font-size: 14px; padding: 10px; } }
 
 @media print { .no-print { display: none !important; } }
+
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
