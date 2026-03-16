@@ -118,3 +118,5 @@ urlpatterns = [
 # See: https://docs.djangoproject.com/en/4.2/topics/http/urls/
 
 # API endpoints can be added under /api/ prefix
+
+# Use include() to split URLs across apps
