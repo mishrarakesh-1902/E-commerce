@@ -116,3 +116,5 @@ urlpatterns = [
 
 # URL routing documentation
 # See: https://docs.djangoproject.com/en/4.2/topics/http/urls/
+
+# API endpoints can be added under /api/ prefix
