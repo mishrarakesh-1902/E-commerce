@@ -120,3 +120,5 @@ urlpatterns = [
 # API endpoints can be added under /api/ prefix
 
 # Use include() to split URLs across apps
+
+# Named URL patterns: use name='' parameter for reverse()
