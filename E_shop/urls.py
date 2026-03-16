@@ -122,3 +122,5 @@ urlpatterns = [
 # Use include() to split URLs across apps
 
 # Named URL patterns: use name='' parameter for reverse()
+
+# Namespace: use app_name in app's urls.py for namespacing
