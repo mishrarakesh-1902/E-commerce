@@ -8,3 +8,6 @@ from django.test import TestCase
 
 # Use setUp() for common test setup
 # Use tearDown() for cleanup after tests
+
+# Use assertRedirects() to test redirects
+# Use assertContains() to check response content
