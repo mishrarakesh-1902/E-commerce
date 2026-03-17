@@ -11,3 +11,6 @@ from django.test import TestCase
 
 # Use assertRedirects() to test redirects
 # Use assertContains() to check response content
+
+# Run tests: python manage.py test
+# Run specific: python manage.py test app.tests.TestClass
