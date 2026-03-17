@@ -19,3 +19,5 @@ from django.test import TestCase
 
 # Use factory_boy for test data generation
 # Use faker for generating fake data in tests
+
+# Test views with Client: self.client.get('/') or self.client.post('/', data={})
