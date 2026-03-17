@@ -16,3 +16,6 @@ from django.test import TestCase
 # Run specific: python manage.py test app.tests.TestClass
 
 # Coverage: pip install coverage && coverage run manage.py test
+
+# Use factory_boy for test data generation
+# Use faker for generating fake data in tests
