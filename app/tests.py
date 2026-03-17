@@ -14,3 +14,5 @@ from django.test import TestCase
 
 # Run tests: python manage.py test
 # Run specific: python manage.py test app.tests.TestClass
+
+# Coverage: pip install coverage && coverage run manage.py test
