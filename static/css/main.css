@@ -2582,3 +2582,6 @@ h2.title {
 
 /* Tooltip styles */
 .tooltip-custom { font-size: 12px; background: #333; color: #fff; padding: 4px 8px; border-radius: 3px; }
+
+/* Input group styles */
+.input-group-custom .input-group-text { background: #e74c3c; color: white; border-color: #e74c3c; }
