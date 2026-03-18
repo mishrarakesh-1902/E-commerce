@@ -21,3 +21,6 @@ from django.test import TestCase
 # Use faker for generating fake data in tests
 
 # Test views with Client: self.client.get('/') or self.client.post('/', data={})
+
+# Test models: create instances and check field values
+# Example: product = Product.objects.create(name='Test', price=100)
