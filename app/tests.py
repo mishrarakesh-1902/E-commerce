@@ -27,3 +27,5 @@ from django.test import TestCase
 
 # Test forms: pass data dict to form and call is_valid()
 # Example: form = ContactForm(data={'name': 'Test', 'email': 'a@b.com'})
+
+# Mocking: use unittest.mock.patch to mock external services
