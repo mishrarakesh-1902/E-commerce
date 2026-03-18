@@ -2585,3 +2585,6 @@ h2.title {
 
 /* Input group styles */
 .input-group-custom .input-group-text { background: #e74c3c; color: white; border-color: #e74c3c; }
+
+/* Table striped custom */
+.table-custom tbody tr:nth-child(odd) { background-color: #fafafa; }
