@@ -2579,3 +2579,6 @@ h2.title {
 
 /* Checkout steps */
 .checkout-step { padding: 15px; border: 1px solid #eee; border-radius: 6px; margin-bottom: 20px; }
+
+/* Tooltip styles */
+.tooltip-custom { font-size: 12px; background: #333; color: #fff; padding: 4px 8px; border-radius: 3px; }
