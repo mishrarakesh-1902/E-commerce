@@ -24,3 +24,6 @@ from django.test import TestCase
 
 # Test models: create instances and check field values
 # Example: product = Product.objects.create(name='Test', price=100)
+
+# Test forms: pass data dict to form and call is_valid()
+# Example: form = ContactForm(data={'name': 'Test', 'email': 'a@b.com'})
