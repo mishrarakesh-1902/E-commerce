@@ -2588,3 +2588,6 @@ h2.title {
 
 /* Table striped custom */
 .table-custom tbody tr:nth-child(odd) { background-color: #fafafa; }
+
+/* Modal header */
+.modal-header-custom { background: #e74c3c; color: white; }
