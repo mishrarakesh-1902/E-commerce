@@ -2594,3 +2594,5 @@ h2.title {
 
 /* Pagination */
 .pagination .page-item.active .page-link { background-color: #e74c3c; border-color: #e74c3c; }
+
+.pagination .page-link { color: #e74c3c; }
