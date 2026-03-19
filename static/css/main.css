@@ -2591,3 +2591,6 @@ h2.title {
 
 /* Modal header */
 .modal-header-custom { background: #e74c3c; color: white; }
+
+/* Pagination */
+.pagination .page-item.active .page-link { background-color: #e74c3c; border-color: #e74c3c; }
