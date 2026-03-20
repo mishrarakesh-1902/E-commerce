@@ -2611,3 +2611,6 @@ h2.title {
 .in-stock { color: #27ae60; font-weight: 600; font-size: 13px; }
 
 .out-of-stock { color: #e74c3c; font-weight: 600; font-size: 13px; }
+
+/* Search bar */
+.search-bar { border-radius: 25px; padding-left: 20px; border: 2px solid #eee; }
