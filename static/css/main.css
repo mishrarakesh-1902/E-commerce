@@ -2609,3 +2609,5 @@ h2.title {
 
 /* Stock indicator */
 .in-stock { color: #27ae60; font-weight: 600; font-size: 13px; }
+
+.out-of-stock { color: #e74c3c; font-weight: 600; font-size: 13px; }
