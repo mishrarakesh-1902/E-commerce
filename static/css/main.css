@@ -2621,3 +2621,6 @@ h2.title {
 .wishlist-icon { position: absolute; top: 10px; right: 10px; color: #ccc; cursor: pointer; }
 
 .wishlist-icon:hover, .wishlist-icon.active { color: #e74c3c; }
+
+/* Order status badge */
+.status-pending { background: #f39c12; color: white; padding: 2px 10px; border-radius: 3px; }
