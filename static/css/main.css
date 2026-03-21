@@ -2619,3 +2619,5 @@ h2.title {
 
 /* Wish list icon */
 .wishlist-icon { position: absolute; top: 10px; right: 10px; color: #ccc; cursor: pointer; }
+
+.wishlist-icon:hover, .wishlist-icon.active { color: #e74c3c; }
