@@ -2634,3 +2634,5 @@ h2.title {
 
 /* Quick view overlay */
 .quick-view-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); opacity: 0; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+
+.product-card:hover .quick-view-overlay { opacity: 1; }
