@@ -162,3 +162,6 @@ MIT License - see LICENSE file for details.
 1. Clone repo
 2. Install requirements
 3. Run migrations
+
+## Usage
+Run python manage.py runserver to start the dev server.
