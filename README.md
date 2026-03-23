@@ -157,3 +157,8 @@ MIT License - see LICENSE file for details.
 - Product listing
 - Cart management
 - User authentication
+
+## Installation
+1. Clone repo
+2. Install requirements
+3. Run migrations
