@@ -2645,3 +2645,6 @@ h2.title {
 
 /* Footer styling */
 .footer-bottom { padding: 20px 0; border-top: 1px solid #eee; }
+
+/* Navigation active state */
+.nav-link.active { color: #e74c3c !important; font-weight: 600; }
