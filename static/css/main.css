@@ -2648,3 +2648,6 @@ h2.title {
 
 /* Navigation active state */
 .nav-link.active { color: #e74c3c !important; font-weight: 600; }
+
+/* Product image zoom */
+.product-img:hover { transform: scale(1.05); transition: transform 0.3s ease; }
