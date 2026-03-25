@@ -2665,3 +2665,6 @@ h2.title {
 
 /* Breadcrumb */
 .breadcrumb-custom { background: transparent; padding: 0; margin-bottom: 20px; }
+
+/* Form focus styles */
+.form-control:focus { border-color: #e74c3c; box-shadow: 0 0 0 0.2rem rgba(231,76,60,0.25); }
