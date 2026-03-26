@@ -2671,3 +2671,5 @@ h2.title {
 
 /* Price display */
 .price-tag { font-size: 22px; font-weight: 700; color: #e74c3c; }
+
+.price-original { text-decoration: line-through; color: #999; font-size: 15px; margin-left: 5px; }
