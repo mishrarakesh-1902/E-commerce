@@ -2676,3 +2676,6 @@ h2.title {
 
 /* Rating stars */
 .stars { color: #f39c12; font-size: 14px; }
+
+/* Sidebar filter */
+.filter-sidebar { border: 1px solid #eee; border-radius: 6px; padding: 15px; }
