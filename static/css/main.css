@@ -2691,3 +2691,6 @@ h2.title {
 
 /* Cart table */
 .cart-table th { background-color: #f8f9fa; font-weight: 600; border-bottom: 2px solid #dee2e6; }
+
+/* Checkout steps */
+.checkout-step { padding: 15px; border: 1px solid #eee; border-radius: 6px; margin-bottom: 20px; }
