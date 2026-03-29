@@ -62,3 +62,5 @@ secrets.json
 # Node modules (if any frontend build)
 node_modules/
 npm-debug.log
+
+# Additional config
