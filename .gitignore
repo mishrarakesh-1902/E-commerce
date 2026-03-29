@@ -64,3 +64,6 @@ node_modules/
 npm-debug.log
 
 # Additional config
+
+# Byte-compiled files
+*.pyc
