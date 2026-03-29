@@ -67,3 +67,7 @@ npm-debug.log
 
 # Byte-compiled files
 *.pyc
+
+# Coverage reports
+.coverage
+htmlcov/
