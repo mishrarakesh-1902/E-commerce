@@ -1,0 +1,10 @@
+<form method="post" action="https://securegw-stage.paytm.in/order/process/">
+
+
+    {% for key, value in paytm_params.items %}
+        <input type="hidden" name="{{ key }}" value="{{ value }}">
+    {% endfor %}
+    <script type="text/javascript">
+        document.paytm_form.submit();
+    </script>
+</form>

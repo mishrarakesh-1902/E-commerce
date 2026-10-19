@@ -1,0 +1,5 @@
+<form method="POST" action="{% url 'checkout' %}">
+    {% csrf_token %}
+    <input type="hidden" name="total_amount" value="500"> <!-- Example Amount -->
+    <button type="submit">Proceed to Paytm</button>
+</form>
